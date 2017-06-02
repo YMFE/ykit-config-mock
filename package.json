@@ -1,0 +1,26 @@
+{
+  "name": "ykit-config-mock",
+  "version": "0.1.0",
+  "description": "ykit mock plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roscoe054/ykit-config-mock.git"
+  },
+  "keywords": [
+    "ykit",
+    "mock"
+  ],
+  "author": "heiwu805@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roscoe054/ykit-config-mock/issues"
+  },
+  "homepage": "https://github.com/roscoe054/ykit-config-mock#readme",
+  "dependencies": {
+    "mockjs": "^1.0.1-beta3"
+  }
+}
