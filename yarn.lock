@@ -17,3 +17,7 @@ mockjs@^1.0.1-beta3:
   resolved "http://registry.npm.corp.qunar.com/mockjs/download/mockjs-1.0.1-beta3.tgz#d234f3c27256397564f2c955142e891909537209"
   dependencies:
     commander "*"
+
+semver-compare@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.corp.qunar.com/semver-compare/download/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"

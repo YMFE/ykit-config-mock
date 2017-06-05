@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/roscoe054/ykit-config-mock#readme",
   "dependencies": {
-    "mockjs": "^1.0.1-beta3"
+    "mockjs": "^1.0.1-beta3",
+    "semver-compare": "^1.0.0"
   }
 }
