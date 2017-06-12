@@ -43,15 +43,15 @@ module.exports = {
 ```javascript
 module.exports = [
 	{
-        pattern: /\/test\.com\/(.*)\.do/, // 匹配一类接口，如 /test.com/list.do -> ./mockData/list.json
+        pattern: /\/testA\.com\/(.*)\.do/, // 匹配一类接口，如 /test.com/list.do -> ./mockData/list.json
         responder: './mockData/$1.json'
     },
 	{
-        pattern: /\/test-another\.com\/person\.do/, // 直接返回数据
+        pattern: /\/testB\.com\/person\.do/, // 直接返回数据
         responder: {id: 'abc'}
     },
 	{
-        pattern: '/test-another.com/query.do', // pattern 为字符串
+        pattern: '/testC.com/query.do', // pattern 为字符串
         responder: {id: 'abc'}
     }
 ];
@@ -71,6 +71,14 @@ module.exports = {
     }],
     // ...
 };
+```
+
+## 关闭 mock
+
+启动 ykit server 时追加参数即可：
+
+```
+$ sudo ykit s mock=false
 ```
 
 [1]: https://github.com/nuysoft/Mock/wiki/Syntax-Specification

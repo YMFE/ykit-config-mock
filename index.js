@@ -2,6 +2,7 @@
 
 var path = require('path');
 var cmp = require('semver-compare');
+var watchr = require('watchr');
 
 var mockMiddleware = require('./lib/mockMiddleware');
 var fetchConfFile = require('./lib/fetchConfFile');
@@ -15,7 +16,15 @@ module.exports = {
     config: function (options, cwd) {
         return {
             modifyWebpackConfig: function(config) {
-                if(this.env !== 'local') {
+                var self = this;
+
+                var isStartingServer = process.argv[2] === 's' || process.argv[2] === 'server';
+                var mockingDisabled = process.argv.some(function(param) {
+                    return param.split('=').length > 1
+                            && param.split('=')[0] === 'mock'
+                            && param.split('=')[1] === 'false'
+                })
+                if(self.env !== 'local' || !isStartingServer || mockingDisabled) {
                     return config;
                 }
 
@@ -27,16 +36,23 @@ module.exports = {
                     }
 
                     try {
-                        var confFile = fetchConfFile.bind(this)(options.confPath);
-                        this.rules = fetchRules.bind(this)(confFile);
-                        this.confFileDir = path.dirname(confFile);
+                        var confFile = fetchConfFile.bind(self)(options.confPath);
+                        self.rules = fetchRules.bind(self)(confFile);
+                        self.confFileDir = path.dirname(confFile);
+
+                        // Watch the confFile with the change listener and completion callback
+                        var stalker = watchr.open(confFile, function (changeType) {
+                            if(changeType === 'update') {
+                                self.rules = fetchRules.bind(self)(confFile, true);
+                            }
+                        }, function() {})
                     } catch(e) {
                         logError(e);
                     }
                 }
 
                 // 在 ykit 本地服务中添加一个 middleware，优先处理请求
-                this.applyMiddleware(mockMiddleware.bind(this));
+                self.applyMiddleware(mockMiddleware.bind(self));
 
                 return config;
             }
