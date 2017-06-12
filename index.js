@@ -15,6 +15,10 @@ module.exports = {
     config: function (options, cwd) {
         return {
             modifyWebpackConfig: function(config) {
+                if(this.env !== 'local') {
+                    return config;
+                }
+
                 if(!isConfFileHandled) {
                     isConfFileHandled = true;
 
@@ -32,7 +36,7 @@ module.exports = {
                 }
 
                 // 在 ykit 本地服务中添加一个 middleware，优先处理请求
-                this.applyMiddleware(mockMiddleware.bind(this))
+                this.applyMiddleware(mockMiddleware.bind(this));
 
                 return config;
             }
