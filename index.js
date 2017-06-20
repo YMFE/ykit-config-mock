@@ -9,6 +9,7 @@ var fetchConfFile = require('./lib/fetchConfFile');
 var fetchRules = require('./lib/fetchRules');
 var requireUncached = require('./lib/util/fs').requireUncached;
 var logMockError = require('./lib/util/log').logMockError;
+var store = require('./lib/store');
 
 var isConfFileHandled = false;
 
@@ -37,13 +38,13 @@ module.exports = {
 
                     try {
                         var confFile = fetchConfFile.bind(self)(options.confPath);
-                        self.rules = fetchRules.bind(self)(confFile);
-                        self.confFileDir = path.dirname(confFile);
+                        store.set('rules', fetchRules.bind(self)(confFile));
+                        store.set('confFileDir', path.dirname(confFile));
 
                         // Watch the confFile with the change listener and completion callback
                         var stalker = watchr.open(confFile, function (changeType) {
                             if(changeType === 'update') {
-                                self.rules = fetchRules.bind(self)(confFile, true);
+                                store.set('rules', fetchRules.bind(self)(confFile, true));
                             }
                         }, function() {})
                     } catch(e) {

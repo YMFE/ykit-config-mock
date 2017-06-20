@@ -1,9 +1,9 @@
-# ykit-config-qunar
+# ykit-config-mock
 
 ## Features
 
 - 模拟接口数据，支持[动态 Mock 数据语法][1]
-- 兼容 FEKit mock 和 Jerry mock。
+- 兼容 FEKit mock 和 Jerry mock
 
 ## 安装
 
