@@ -1,5 +1,7 @@
 # ykit-config-mock
 
+需要 ykit 版本 >= 0.5.0
+
 ## Features
 
 - 模拟接口数据，支持[动态 Mock 数据语法][1]
