@@ -1,6 +1,6 @@
 {
   "name": "ykit-config-mock",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "ykit mock plugin",
   "main": "index.js",
   "scripts": {

@@ -53,7 +53,9 @@ module.exports = {
                 }
 
                 // 在 ykit 本地服务中添加一个 middleware，优先处理请求
-                self.applyMiddleware(mockMiddleware.bind(self));
+                self.applyMiddleware(mockMiddleware.bind(self), {
+                    global: true
+                });
 
                 return config;
             }
