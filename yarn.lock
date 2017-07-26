@@ -9,6 +9,25 @@ ambi@^2.2.0, ambi@^2.5.0:
     editions "^1.1.1"
     typechecker "^4.3.0"
 
+body-parser@^1.17.2:
+  version "1.17.2"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/body-parser/-/body-parser-1.17.2.tgz#f8892abc8f9e627d42aedafbca66bf5ab99104ee"
+  dependencies:
+    bytes "2.4.0"
+    content-type "~1.0.2"
+    debug "2.6.7"
+    depd "~1.1.0"
+    http-errors "~1.6.1"
+    iconv-lite "0.4.15"
+    on-finished "~2.3.0"
+    qs "6.4.0"
+    raw-body "~2.2.0"
+    type-is "~1.6.15"
+
+bytes@2.4.0:
+  version "2.4.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/bytes/-/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
+
 coffee-script@^1.12.5:
   version "1.12.6"
   resolved "http://registry.npm.corp.qunar.com/coffee-script/download/coffee-script-1.12.6.tgz#285a3f7115689065064d6bf9ef4572db66695cbf"
@@ -19,11 +38,46 @@ commander@*:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
+connect-query@^1.0.0:
+  version "1.0.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/connect-query/-/connect-query-1.0.0.tgz#de44f577209da2404d1fc04692d1a4118e582119"
+  dependencies:
+    qs "~6.4.0"
+
+content-type@~1.0.2:
+  version "1.0.2"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/content-type/-/content-type-1.0.2.tgz#b7d113aee7a8dd27bd21133c4dc2529df1721eed"
+
+cookie-parser@^1.4.3:
+  version "1.4.3"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/cookie-parser/-/cookie-parser-1.4.3.tgz#0fe31fa19d000b95f4aadf1f53fdc2b8a203baa5"
+  dependencies:
+    cookie "0.3.1"
+    cookie-signature "1.0.6"
+
+cookie-signature@1.0.6:
+  version "1.0.6"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
+
+cookie@0.3.1:
+  version "0.3.1"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
 csextends@^1.0.3:
   version "1.1.1"
   resolved "http://registry.npm.corp.qunar.com/csextends/download/csextends-1.1.1.tgz#cc53c1349faf7f0ae6cdf6f6c4a4d9156d3c4ec1"
   dependencies:
     coffee-script "^1.12.5"
+
+debug@2.6.7:
+  version "2.6.7"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
+  dependencies:
+    ms "2.0.0"
+
+depd@1.1.0, depd@~1.1.0:
+  version "1.1.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/depd/-/depd-1.1.0.tgz#e1bd82c6aab6ced965b97b88b17ed3e528ca18c3"
 
 eachr@^3.2.0:
   version "3.2.0"
@@ -35,6 +89,10 @@ eachr@^3.2.0:
 editions@^1.1.1, editions@^1.1.2, editions@^1.3.1, editions@^1.3.3:
   version "1.3.3"
   resolved "http://registry.npm.corp.qunar.com/editions/download/editions-1.3.3.tgz#0907101bdda20fac3cbe334c27cbd0688dc99a5b"
+
+ee-first@1.1.1:
+  version "1.1.1"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 extendr@^3.2.0, extendr@^3.2.2:
   version "3.2.2"
@@ -51,6 +109,19 @@ graceful-fs@*, graceful-fs@^4.1.4:
   version "1.0.1"
   resolved "http://registry.npm.corp.qunar.com/graceful-readlink/download/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
+http-errors@~1.6.1:
+  version "1.6.1"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/http-errors/-/http-errors-1.6.1.tgz#5f8b8ed98aca545656bf572997387f904a722257"
+  dependencies:
+    depd "1.1.0"
+    inherits "2.0.3"
+    setprototypeof "1.0.3"
+    statuses ">= 1.3.1 < 2"
+
+iconv-lite@0.4.15:
+  version "0.4.15"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
+
 ignorefs@^1.0.0, ignorefs@^1.1.1:
   version "1.2.0"
   resolved "http://registry.npm.corp.qunar.com/ignorefs/download/ignorefs-1.2.0.tgz#da59fb858976e4a5e43702ccd1f282fdbc9e5756"
@@ -62,11 +133,51 @@ ignorepatterns@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.corp.qunar.com/ignorepatterns/download/ignorepatterns-1.1.0.tgz#ac8f436f2239b5dfb66d5f0d3a904a87ac67cc5e"
 
+inherits@2.0.3:
+  version "2.0.3"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
+
+media-typer@0.3.0:
+  version "0.3.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+mime-db@~1.29.0:
+  version "1.29.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/mime-db/-/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878"
+
+mime-types@~2.1.15:
+  version "2.1.16"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/mime-types/-/mime-types-2.1.16.tgz#2b858a52e5ecd516db897ac2be87487830698e23"
+  dependencies:
+    mime-db "~1.29.0"
+
 mockjs@^1.0.1-beta3:
   version "1.0.1-beta3"
   resolved "http://registry.npm.corp.qunar.com/mockjs/download/mockjs-1.0.1-beta3.tgz#d234f3c27256397564f2c955142e891909537209"
   dependencies:
     commander "*"
+
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
+on-finished@~2.3.0:
+  version "2.3.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
+  dependencies:
+    ee-first "1.1.1"
+
+qs@6.4.0, qs@~6.4.0:
+  version "6.4.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+
+raw-body@~2.2.0:
+  version "2.2.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/raw-body/-/raw-body-2.2.0.tgz#994976cf6a5096a41162840492f0bdc5d6e7fb96"
+  dependencies:
+    bytes "2.4.0"
+    iconv-lite "0.4.15"
+    unpipe "1.0.0"
 
 safefs@^3.1.2:
   version "3.2.2"
@@ -93,6 +204,14 @@ semver-compare@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.corp.qunar.com/semver-compare/download/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
 
+setprototypeof@1.0.3:
+  version "1.0.3"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
+
+"statuses@>= 1.3.1 < 2":
+  version "1.3.1"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
+
 taskgroup@^4.0.5:
   version "4.3.1"
   resolved "http://registry.npm.corp.qunar.com/taskgroup/download/taskgroup-4.3.1.tgz#7de193febd768273c457730497024d512c27915a"
@@ -109,11 +228,22 @@ taskgroup@^5.0.1:
     editions "^1.1.1"
     extendr "^3.2.0"
 
+type-is@~1.6.15:
+  version "1.6.15"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/type-is/-/type-is-1.6.15.tgz#cab10fb4909e441c82842eafe1ad646c81804410"
+  dependencies:
+    media-typer "0.3.0"
+    mime-types "~2.1.15"
+
 typechecker@^4.3.0:
   version "4.4.1"
   resolved "http://registry.npm.corp.qunar.com/typechecker/download/typechecker-4.4.1.tgz#f97b95f51b038417212d677d45a373ee7bced7e6"
   dependencies:
     editions "^1.3.3"
+
+unpipe@1.0.0:
+  version "1.0.0"
+  resolved "https://repo.corp.qunar.com/artifactory/api/npm/npm-qunar/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
 
 watchr@^3.0.1:
   version "3.0.1"

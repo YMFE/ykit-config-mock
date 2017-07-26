@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/roscoe054/ykit-config-mock#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-query": "^1.0.0",
+    "cookie-parser": "^1.4.3",
     "mockjs": "^1.0.1-beta3",
     "semver-compare": "^1.0.0",
     "watchr": "^3.0.1"

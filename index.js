@@ -3,6 +3,9 @@
 var path = require('path');
 var cmp = require('semver-compare');
 var watchr = require('watchr');
+var bodyParser = require('body-parser');
+var query = require('connect-query');
+var cookieParser = require('cookie-parser');
 
 var mockMiddleware = require('./lib/mockMiddleware');
 var fetchConfFile = require('./lib/fetchConfFile');
@@ -52,10 +55,11 @@ module.exports = {
                     }
                 }
 
-                // 在 ykit 本地服务中添加一个 middleware，优先处理请求
-                self.applyMiddleware(mockMiddleware.bind(self), {
-                    global: true
-                });
+                // add middlewares
+                self.applyMiddleware(query(), {global: true})
+                self.applyMiddleware(cookieParser(), {global: true})
+                self.applyMiddleware(bodyParser.urlencoded({extended: false}), {global: true})
+                self.applyMiddleware(mockMiddleware.bind(self), {global: true});
 
                 return config;
             }
