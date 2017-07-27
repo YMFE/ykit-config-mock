@@ -51,7 +51,7 @@ module.exports = {
                             }
                         }, function() {})
                     } catch(e) {
-                        logError(e);
+                        logError(e.stack);
                     }
                 }
 
