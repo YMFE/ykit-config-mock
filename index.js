@@ -59,6 +59,7 @@ module.exports = {
                 self.applyMiddleware(query(), {global: true})
                 self.applyMiddleware(cookieParser(), {global: true})
                 self.applyMiddleware(bodyParser.urlencoded({extended: false}), {global: true})
+                self.applyMiddleware(bodyParser.json(), {global: true})
                 self.applyMiddleware(mockMiddleware.bind(self), {global: true});
 
                 return config;
