@@ -59,6 +59,65 @@ module.exports = [
 ];
 ```
 
+### 数据模板定义
+
+可以通过定义数据模板来返回动态 mock 数据，具体规则[查看这里][2]。
+
+```javascript
+{
+    pattern: '/test.com/query.do',
+    responder: {
+        "array|1-10": [
+            "Mock.js"
+        ]
+    }
+}
+
+// 返回数据：
+// {
+//   "array": [
+//     "Mock.js",
+//     "Mock.js",
+//     "Mock.js",
+//     "Mock.js"
+//   ]
+// }
+```
+
+### 通过函数处理返回
+
+```javascript
+{
+    pattern: '/test.com/query.do',
+    responder: function(req, res) { // 两个参数，req 为请求对象，res 为返回对象
+        // 这里可以有更多其他的处理过程
+        // 从 req 中可以获取 req.cookies\req.query\req.body 等
+        res.end(JSON.stringify({
+            "ret": true,
+            "data": [{
+                "name": "Li Lei",
+                "email": "lilei@test.com",
+                "registerDateTime": "2020-10-01 22:11:11"
+            }, {
+                "name": "Han Meimei",
+                "email": "hanmeimei@test.com",
+                "registerDateTime": "2020-10-01 22:11:11"
+            }]
+        }))
+    }
+}
+```
+
+### jsonp
+
+```javascript
+{
+    pattern: '/api/list.json',
+    responder: './data/listData.json',
+    jsonp: 'jsCallback' // jsonp 请求的回调函数名，默认为 "callback"
+}
+```
+
 ## options
 
 mock 插件会自动寻找项目根目录下的 mock.js 或者 mock.json，你也可以通过 options 手动指定一个 mock 配置的路径：
@@ -84,3 +143,4 @@ $ sudo ykit s mock=false
 ```
 
 [1]: https://github.com/nuysoft/Mock/wiki/Syntax-Specification
+[2]: http://mockjs.com/examples.html
