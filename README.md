@@ -59,7 +59,7 @@ module.exports = [
 ];
 ```
 
-### 数据模板定义
+### 动态数据
 
 可以通过定义数据模板来返回动态 mock 数据，具体规则[查看这里][2]。
 
@@ -84,6 +84,17 @@ module.exports = [
 // }
 ```
 
+### 获取远程数据(map to remote)
+
+将接口转到远端来获取数据。
+
+```javascript
+{
+    pattern: '/test.com/query.do',
+    responder: 'http://yapi.corp.qunar.com/mock/58/getItems'
+}
+```
+
 ### 通过函数处理返回
 
 ```javascript
@@ -94,15 +105,11 @@ module.exports = [
         // 从 req 中可以获取 req.cookies\req.query\req.body 等
         res.end(JSON.stringify({
             "ret": true,
-            "data": [{
+            "data": {
                 "name": "Li Lei",
                 "email": "lilei@test.com",
                 "registerDateTime": "2020-10-01 22:11:11"
-            }, {
-                "name": "Han Meimei",
-                "email": "hanmeimei@test.com",
-                "registerDateTime": "2020-10-01 22:11:11"
-            }]
+            }
         }))
     }
 }
@@ -141,6 +148,9 @@ module.exports = {
 ```
 $ sudo ykit s mock=false
 ```
+
+## 示例
+https://github.com/roscoe054/ykit-starter-mock
 
 [1]: https://github.com/nuysoft/Mock/wiki/Syntax-Specification
 [2]: http://mockjs.com/examples.html

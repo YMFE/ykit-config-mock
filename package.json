@@ -1,6 +1,6 @@
 {
   "name": "ykit-config-mock",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "ykit mock plugin",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,11 @@
     "body-parser": "^1.17.2",
     "connect-query": "^1.0.0",
     "cookie-parser": "^1.4.3",
+    "extend": "^3.0.1",
     "mockjs": "^1.0.1-beta3",
+    "request": "^2.81.0",
     "semver-compare": "^1.0.0",
+    "valid-url": "^1.0.9",
     "watchr": "^3.0.1"
   }
 }
