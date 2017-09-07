@@ -84,7 +84,7 @@ module.exports = [
 // }
 ```
 
-### 获取远程数据(map to remote)
+### 获取远程数据(Map Remote)
 
 将接口转到远端来获取数据。
 
@@ -94,6 +94,18 @@ module.exports = [
     responder: 'http://yapi.corp.qunar.com/mock/58/getItems'
 }
 ```
+
+这意味着也可以用它来做类似 Map Remote 的功能：
+
+```javascript
+{
+    // 添加了 .json 后缀是为了防止 .js 等资源也被 Mock 服务处理。
+    pattern: /\/(.*)\.json/,
+    responder: 'http://yapi.corp.qunar.com/$1.json'
+}
+```
+
+上面通过正则匹配，将所有接口转到 http://yapi.corp.qunar.com 上，比如 `http://localhost/getItems.json` 会成为 `http://yapi.corp.qunar.com/getItems.json`
 
 ### 通过函数处理返回
 
