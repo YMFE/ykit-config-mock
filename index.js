@@ -17,25 +17,23 @@ var store = require('./lib/store');
 var isConfFileHandled = false;
 
 module.exports = {
-    config: function (options, cwd) {
+    config: function(options, cwd) {
         return {
             modifyWebpackConfig: function(config) {
                 var self = this;
 
                 var isStartingServer = process.argv[2] === 's' || process.argv[2] === 'server';
                 var mockingDisabled = process.argv.some(function(param) {
-                    return param.split('=').length > 1
-                            && param.split('=')[0] === 'mock'
-                            && param.split('=')[1] === 'false'
+                    return param.split('=').length > 1 && param.split('=')[0] === 'mock' && param.split('=')[1] === 'false'
                 })
-                if(self.env !== 'local' || !isStartingServer || mockingDisabled) {
+                if (self.env !== 'local' || !isStartingServer || mockingDisabled) {
                     return config;
                 }
 
-                if(!isConfFileHandled) {
+                if (!isConfFileHandled) {
                     isConfFileHandled = true;
 
-                    if(!global.ykitVer || !cmp(global.ykitVer, '0.4.1')) {
+                    if (!global.ykitVer || !cmp(global.ykitVer, '0.4.1')) {
                         return logWarn('ykit-config-mock only supports ykit version >= 0.5.0');
                     }
 
@@ -44,13 +42,16 @@ module.exports = {
                         store.set('rules', fetchRules.bind(self)(confFile));
                         store.set('confFileDir', path.dirname(confFile));
 
-                        // Watch the confFile with the change listener and completion callback
-                        var stalker = watchr.open(confFile, function (changeType) {
-                            if(changeType === 'update') {
+                        // Create the stalker for the mock config file
+                        var stalker = watchr.create(confFile)
+                        stalker.on('change', function(changeType) {
+                            if (changeType === 'update') {
                                 store.set('rules', fetchRules.bind(self)(confFile, true));
                             }
-                        }, function() {})
-                    } catch(e) {
+                        });
+                        stalker.setConfig({catchupDelay: 500});
+                        stalker.watch(function() {});
+                    } catch (e) {
                         logError(e.stack);
                     }
                 }
